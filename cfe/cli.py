@@ -11,9 +11,11 @@ class Services(object):
     def __init__(self):
         self.linode = linode.LinodeAPI
 
+
 class Pipeline(object):
     def __init__(self):
         self.services = Services()
+
 
 def cfe_cli():
     fire.Fire(Pipeline)

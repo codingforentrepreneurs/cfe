@@ -4,6 +4,9 @@ SRC = $(wildcard ./*.ipynb)
 
 all: cfe docs
 
+cli: 
+	nbdev_build_lib && pip install -e .
+
 cfe: $(SRC)
 	nbdev_build_lib
 	touch cfe
