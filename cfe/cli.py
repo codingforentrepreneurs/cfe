@@ -7,9 +7,9 @@ from .services import linode
 import fire
 
 class Services(object):
-    def __init__(self):
-        self.linode = linode.LinodeAPI()
 
+    def __init__(self):
+        self.linode = linode.LinodeAPI
 
 class Pipeline(object):
     def __init__(self):
