@@ -3,6 +3,7 @@
 __all__ = ['Services', 'Pipeline', 'cfe_cli']
 
 # Cell
+from .tools import security
 from .services import linode
 import fire
 
@@ -12,9 +13,14 @@ class Services(object):
         self.linode = linode.LinodeAPI
 
 
+class _New(object):
+    def __init__(self):
+        self.secret = security.get_new_secret
+
 class Pipeline(object):
     def __init__(self):
         self.services = Services()
+        self.new = _New()
 
 
 def cfe_cli():
